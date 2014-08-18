@@ -3,13 +3,15 @@ package com.example.lcair5.myfirstapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
 
-public class mainactivity extends Activity {
+public class mainactivity extends ActionBarActivity {
 
     public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
@@ -31,6 +33,8 @@ public class mainactivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+
+
         getMenuInflater().inflate(R.menu.mainactivity, menu);
         return true;
     }
