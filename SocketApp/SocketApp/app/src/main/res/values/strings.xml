@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SocketApp</string>
+    <string name="title_display">My first android app using sockets!</string>
+    <string name="login_name">Login Page</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login_page">LoginPage</string>
+    <string name="button_send">Send</string>
+
+</resources>

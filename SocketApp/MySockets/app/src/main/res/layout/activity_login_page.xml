@@ -1,0 +1,34 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.genji.socketapp.LoginPage">
+
+    <TextView
+        android:id="@+id/Title_Display"
+        android:layout_width="fill_parent"
+        android:layout_height="100dip"
+        android:text="@string/title_display"
+        />
+
+    <EditText
+        android:id="@+id/Username_Input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pick a username."
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm"
+        android:onClick="submitUsername"
+        />
+
+
+</TableLayout>
