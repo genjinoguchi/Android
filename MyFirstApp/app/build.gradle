@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+<<<<<<< HEAD
     compileSdkVersion 19
     buildToolsVersion '19.1.0'
 
@@ -8,6 +9,15 @@ android {
         applicationId "com.example.lcair5.myfirstapp"
         minSdkVersion 19
         targetSdkVersion 19
+=======
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "com.example.lcair5.myfirstapp"
+        minSdkVersion 16
+        targetSdkVersion 20
+>>>>>>> e53e06e5d551797972dea82f4b8a27e8a223836f
         versionCode 1
         versionName "1.0"
     }
@@ -21,6 +31,12 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+<<<<<<< HEAD
     compile 'com.android.support:appcompat-v7:+'
 }
 
+=======
+    compile 'com.android.support:appcompat-v7:20.0.0'
+    compile 'com.android.support:support-v4:20.0.0'
+}
+>>>>>>> e53e06e5d551797972dea82f4b8a27e8a223836f

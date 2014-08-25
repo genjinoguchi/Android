@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:orientation="horizontal"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -19,6 +20,17 @@
 
     <Button
         android:id="@+id/submit_button"
+=======
+    android:orientation="horizontal" >
+
+    <EditText android:id="@+id/edit_message"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_message" />
+
+    <Button
+>>>>>>> e53e06e5d551797972dea82f4b8a27e8a223836f
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_send"
@@ -26,4 +38,8 @@
         />
 
 
+<<<<<<< HEAD
 </LinearLayout>
+=======
+</LinearLayout>
+>>>>>>> e53e06e5d551797972dea82f4b8a27e8a223836f
