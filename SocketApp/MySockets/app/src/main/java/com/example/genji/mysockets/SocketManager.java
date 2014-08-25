@@ -14,7 +14,6 @@ import io.socket.SocketIOException;
  */
 public class SocketManager implements IOCallback{
     private String serverURL;
-    private ServerAcknowledge serverAck;
     private SocketIO socket;
 
     public SocketManager(String url) throws Exception{
@@ -22,12 +21,26 @@ public class SocketManager implements IOCallback{
 
             socket = new SocketIO(url);
             socket.connect(this);
-
-            serverAck = new ServerAcknowledge();
+            System.out.println("################################################################33333333333333");
+            System.out.println("It worked!");
 
         } catch(Exception e){
+            System.out.println("################################################################33333333333333");
+            System.out.println("Connection error (socketmanager)");
             e.printStackTrace();
         }
+    }
+
+    public boolean setUsername(String username){
+        try {
+            socket.emit("add user", username);
+            return true;
+        } catch (Exception e){
+            System.out.println("################################################################33333333333333");
+            System.out.println("Exception when updating username. (Socketmanager)");
+
+        }
+        return false;
     }
 
     //Callbacks
