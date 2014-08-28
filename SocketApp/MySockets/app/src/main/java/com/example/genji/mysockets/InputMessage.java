@@ -9,11 +9,9 @@ import android.view.ViewGroup;
 
 
 public class InputMessage extends Fragment {
-    ServerAcknowledge serverAck;
 
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState){
-        serverAck = new ServerAcknowledge();
 
         View view = inflater.inflate(R.layout.fragment_input_message, container, false);
 

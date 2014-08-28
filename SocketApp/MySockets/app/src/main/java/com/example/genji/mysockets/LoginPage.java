@@ -20,11 +20,16 @@ public class LoginPage extends Activity {
     }
 
     public void submitUsername(View view){
-        Intent intent = new Intent(this, main.class);
+
         EditText editText = (EditText) findViewById(R.id.Username_Input);
         String message = editText.getText().toString();
-        intent.putExtra(USERNAME_EXTRA, message);
-        startActivity(intent);
+        if(message.isEmpty()){
+            System.out.println("Please enter an actual name.");
+        }else {
+            Intent intent = new Intent(this, main.class);
+            intent.putExtra(USERNAME_EXTRA, message);
+            startActivity(intent);
+        }
     }
 
     @Override

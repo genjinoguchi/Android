@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script src="/socket.io/socket.io.js"></script>
+	</head>
+
+	<body>
+		Socket stuff.
+		<script>
+		  var socket = io.connect('http://localhost:3000');
+		  socket.emit('test', { "webtest": "hurr"})
+		  /*
+		  socket.on('news', function (data) {
+		    console.log(data);
+		    socket.emit('test', { "webtest": 'hurr' });
+		  });
+			*/
+		</script>
+	</body>
+
+
+</html>

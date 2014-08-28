@@ -1,0 +1,9 @@
+{
+  "name": "testchat",
+  "main": "app.js",
+  "dependencies": {
+    "socket.io": "0.9.16",
+    "express": "~4.8.5",
+    "body-parser": "~1.6.5"
+  }
+}

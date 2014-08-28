@@ -1,17 +1,88 @@
 package com.example.genji.mysockets;
 
+import com.github.nkzawa.emitter.Emitter;
+import com.github.nkzawa.socketio.client.Ack;
+import com.github.nkzawa.socketio.client.IO;
+import com.github.nkzawa.socketio.client.Socket;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
+public class SocketManager{
+    private Socket socket;
+    private Ack ack;
+
+    public SocketManager(){
+        try {
+            init();
+            System.out.println("###################################################");
+            System.out.println("Connection successful.");
+        } catch (Exception e){
+            System.out.println("###################################################");
+            System.out.println("Wrong url.");
+        }
+    }
+
+    public void init() throws Exception {
+        ack = new Ack(){
+            @Override
+            public void call(Object...args){
+                System.out.println("ACKACKACKACKACKACKACKACKACKACKACKACKACKACKACKACKACKACKACKACKACKACKACKv");
+                System.out.println(args);
+            }
+        };
+        socket = IO.socket("http://192.168.1.8:3000");
+        socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
+
+            @Override
+            public void call(Object... args) {
+                socket.emit("foo", "hi");
+                socket.disconnect();
+            }
+
+        }).on("event", new Emitter.Listener() {
+
+            @Override
+            public void call(Object... args) {
+                System.out.println(args);
+            }
+
+        }).on(Socket.EVENT_DISCONNECT, new Emitter.Listener() {
+
+            @Override
+            public void call(Object... args) {
+            }
+
+        });
+        socket.connect();
+    }
+
+    public boolean sendTestMessage(String s){
+        JSONObject json = new JSONObject();
+        try {
+            json.put("AndroidMessage", s);
+            socket.emit("test", json, ack);
+            System.out.println("###############################################################################");
+            System.out.println(json);
+            return true;
+        } catch (JSONException e){
+            System.out.println("##############################################################################3");
+            System.out.println("erp (socketmanager)");
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+}
+
+
+/*
 import io.socket.IOAcknowledge;
 import io.socket.IOCallback;
 import io.socket.SocketIO;
 import io.socket.SocketIOException;
 
 
-/**
- * Created by gnoguchi on 8/24/14.
- */
 public class SocketManager implements IOCallback{
     private String serverURL;
     private SocketIO socket;
@@ -74,6 +145,5 @@ public class SocketManager implements IOCallback{
         System.out.println("Server triggered event '" + event + "'");
     }
 
-
-
 }
+*/

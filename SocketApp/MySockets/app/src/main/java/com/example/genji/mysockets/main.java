@@ -20,9 +20,9 @@ public class main extends ActionBarActivity {
         String username = intent.getStringExtra(LoginPage.USERNAME_EXTRA);
 
         try {
-            ioManager = new SocketManager("http://localhost:3000");
+            ioManager = new SocketManager();
             System.out.println("############################################################maintest1");
-            ioManager.setUsername(username);
+            ioManager.sendTestMessage("I'm here!");
             System.out.println("############################################################maintest2");
 
         } catch (Exception e){
