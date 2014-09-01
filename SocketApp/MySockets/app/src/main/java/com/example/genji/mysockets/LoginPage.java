@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class LoginPage extends Activity {
@@ -24,6 +25,7 @@ public class LoginPage extends Activity {
         EditText editText = (EditText) findViewById(R.id.Username_Input);
         String message = editText.getText().toString();
         if(message.isEmpty()){
+            Toast.makeText(this,"Please enter a valid name",Toast.LENGTH_SHORT).show();
             System.out.println("Please enter an actual name.");
         }else {
             Intent intent = new Intent(this, main.class);

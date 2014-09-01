@@ -31,7 +31,7 @@ public class SocketManager{
                 System.out.println(args);
             }
         };
-        socket = IO.socket("http://192.168.1.8:3000");
+        socket = IO.socket("http://192.168.1.9:3000");
         socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
 
             @Override
